@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <meta charset="UTF-8" />
   <title>COASTLE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* Blue color scheme */
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -13,24 +13,23 @@
       color: #003366;
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      min-height: 100vh;
     }
-
-
 
     header {
       background-color: #004aad;
       color: white;
-      padding: 1rem 2rem;
+      padding: 1.2rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0, 0, 50, 0.15);
     }
 
     header h1 {
       margin: 0;
-      font-weight: bold;
-      font-size: 1.5rem;
+      font-weight: 600;
+      font-size: 1.8rem;
     }
 
     nav {
@@ -40,12 +39,11 @@
 
     nav a {
       background-color: #1a66ff;
-      border: none;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       color: white;
       font-weight: 600;
       cursor: pointer;
-      border-radius: 4px;
+      border-radius: 5px;
       text-decoration: none;
       font-size: 1rem;
       transition: background-color 0.3s ease;
@@ -55,37 +53,44 @@
       background-color: #003db3;
     }
 
-    /* Main content flex */
     main {
       display: flex;
       flex: 1;
       padding: 2rem;
-      gap: 1rem;
-      overflow: auto;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    #left, #right {
-      flex: 1;
+    section {
+      flex: 1 1 400px;
       background-color: white;
-      border-radius: 6px;
-      padding: 1.5rem;
-      box-shadow: 0 0 10px rgba(0, 0, 50, 0.1);
-      overflow-y: auto;
+      border-radius: 10px;
+      padding: 1.8rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 50, 0.1);
+      max-width: 600px;
     }
 
-    #map iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 6px;
-      margin-top: 1rem;
-    }
-
-    #modelResult {
-      font-weight: bold;
-      margin-top: 1rem;
-      font-size: 1.2rem;
+    h2 {
+      font-size: 1.4rem;
       color: #004aad;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      text-align: left;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
     }
 
     button.action-btn {
@@ -93,8 +98,7 @@
       color: white;
       border: none;
       padding: 0.7rem 1.2rem;
-      margin-right: 0.5rem;
-      border-radius: 4px;
+      border-radius: 5px;
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
@@ -105,76 +109,130 @@
       background-color: #003db3;
     }
 
+    #modelResult {
+      font-weight: bold;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #004aad;
+    }
+
+    #map iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 1rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 50, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 1rem;
+      }
+
+      section {
+        padding: 1.2rem;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>COASTLE</h1>
-  <nav>
-<a href="about.html">About Us</a>
-  </nav>
-</header>
+  <header>
+    <h1>COASTLE</h1>
+    <nav>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
 
-<main>
-  <section id="left">
-    <h2>City Features</h2>
-    <ul id="cityDataList"></ul>
-  </section>
+  <main>
+    <section id="left">
+      <h2>City Features</h2>
+      <ul id="cityDataList"></ul>
+    </section>
 
-  <section id="right">
-    <h2>Your Guess</h2>
-    <div>
-      <button class="action-btn" onclick="setGuessAndRun('Coastal')">Coastal</button>
-      <button class="action-btn" onclick="setGuessAndRun('Not Coastal')">Not Coastal</button>
-      <button class="action-btn" onclick="openMap()">See on Map</button>
-    </div>
-    <p>Your guess: <span id="guess-display">None</span></p>
-    <p id="modelResult"></p>
-    <div id="map"></div>
-  </section>
-</main>
+    <section id="right">
+      <h2>Your Guess</h2>
+      <div class="button-group">
+        <button class="action-btn" onclick="setGuessAndRun('Coastal')">Coastal</button>
+        <button class="action-btn" onclick="setGuessAndRun('Not Coastal')">Not Coastal</button>
+        <button class="action-btn" onclick="openMap()">See on Map</button>
+      </div>
+      <p>Your guess: <span id="guess-display">None</span></p>
+      <p id="modelResult"></p>
+      <div id="map"></div>
+    </section>
+  </main>
 
-<script>
-  let userGuess = null;
-  let cityData = {};  // or do manually for now
-  let cityCoords = [34.0522, -118.2437];  // Replace with real coordinates
+  <script>
+    let userGuess = null;
 
-  function setGuessAndRun(guess) {
-    userGuess = guess;
-    document.getElementById('guess-display').innerText = guess;
-    runModel();
-  }
+    let cityData = {
+      population: 1000000,
+      elevation: 15,
+      region: "West Coast"
+    };
 
-  async function runModel() {
-    const response = await fetch('/test', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userGuess, cityData, cityCoords })
-    });
-    const data = await response.json();
-    document.getElementById('modelResult').innerText = 'COASTLE says: ' + data.modelGuess;
-    document.getElementById('map').innerHTML = `
-      <iframe
-        src="https://maps.google.com/maps?q=${data.coords[0]},${data.coords[1]}&z=10&output=embed"
-        allowfullscreen>
-      </iframe>
-    `;
-  }
+    let cityCoords = [34.0522, -118.2437]; // Example: Los Angeles
 
-  window.onload = () => {
-    const list = document.getElementById('cityDataList');
-    for (const [key, value] of Object.entries(cityData)) {
-      const li = document.createElement('li');
-      li.textContent = `${key}: ${value}`;
-      list.appendChild(li);
+    function setGuessAndRun(guess) {
+      userGuess = guess;
+      document.getElementById('guess-display').innerText = guess;
+      runModel();
     }
-  };
 
-  function openMap() {
-  const lat = cityCoords[0];
-  const lng = cityCoords[1];  // ✅ rename this
-  const mapUrl = `map.html?lat=${lat}&lng=${lng}`;  
-  window.open(mapUrl, "_blank");
-  }
-</script>
+    async function runModel() {
+      try {
+        const response = await fetch('/test', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userGuess, cityData, cityCoords })
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json();
+
+        document.getElementById('modelResult').innerText = 'COASTLE says: ' + data.modelGuess;
+
+        if (data.coords && data.coords.length === 2) {
+          document.getElementById('map').innerHTML = `
+            <iframe
+              src="https://maps.google.com/maps?q=${data.coords[0]},${data.coords[1]}&z=10&output=embed"
+              allowfullscreen>
+            </iframe>
+          `;
+        }
+      } catch (error) {
+        console.error('Error running model:', error);
+        document.getElementById('modelResult').innerText = 'Error getting prediction.';
+      }
+    }
+
+    window.onload = () => {
+      const list = document.getElementById('cityDataList');
+      for (const [key, value] of Object.entries(cityData)) {
+        const li = document.createElement('li');
+        li.textContent = `${key}: ${value}`;
+        list.appendChild(li);
+      }
+    };
+
+    function openMap() {
+      if (cityCoords && cityCoords.length === 2) {
+        const [lat, lng] = cityCoords;
+        document.getElementById('map').innerHTML = `
+          <iframe
+            src="https://maps.google.com/maps?q=${lat},${lng}&z=10&output=embed"
+            allowfullscreen>
+          </iframe>
+        `;
+      }
+    }
+  </script>
+</body>
+
+</html>
