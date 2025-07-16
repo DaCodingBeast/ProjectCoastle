@@ -1,4 +1,5 @@
+pyparsing
+pillow
 numpy
-matplotlib
-scipy
 pandas
+matplotlib
