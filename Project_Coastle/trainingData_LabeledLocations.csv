@@ -1,0 +1,327 @@
+latitude,longitude,coastal,name_of_city
+25.76,-80.19,1,Miami
+47.61,-122.33,1,Seattle
+37.77,-122.42,1,San Francisco
+42.36,-71.06,1,Boston
+40.71,-74.01,1,New York City
+34.05,-118.24,1,Los Angeles
+32.72,-117.16,1,San Diego
+41.88,-87.63,-1,Chicago
+39.29,-76.61,1,Baltimore
+38.90,-77.04,-1,Washington DC
+29.76,-95.37,1,Houston
+26.12,-80.14,1,Fort Lauderdale
+30.33,-81.66,1,Jacksonville
+27.95,-82.46,1,Tampa
+28.54,-81.38,-1,Orlando
+33.45,-112.07,-1,Phoenix
+39.74,-104.99,-1,Denver
+36.17,-115.14,-1,Las Vegas
+32.78,-96.81,-1,Dallas
+29.42,-98.49,-1,San Antonio
+30.27,-97.74,-1,Austin
+35.22,-101.83,-1,Amarillo
+31.76,-106.49,-1,El Paso
+35.08,-106.65,-1,Albuquerque
+39.16,-75.53,1,Philadelphia
+40.44,-79.99,-1,Pittsburgh
+39.96,-82.99,-1,Columbus
+41.50,-81.69,1,Cleveland
+42.33,-83.05,-1,Detroit
+44.98,-93.27,-1,Minneapolis
+38.63,-90.20,-1,St. Louis
+39.10,-94.58,-1,Kansas City
+41.59,-93.62,-1,Des Moines
+43.07,-87.91,1,Milwaukee
+43.04,-76.13,1,Syracuse
+42.88,-78.88,1,Buffalo
+40.76,-111.89,-1,Salt Lake City
+45.52,-122.68,1,Portland
+43.61,-116.21,-1,Boise
+47.04,-122.90,1,Olympia
+61.22,-149.90,1,Anchorage
+21.31,-157.83,1,Honolulu
+36.85,-76.29,1,Norfolk
+35.26,-80.84,-1,Charlotte
+35.77,-78.64,-1,Raleigh
+34.00,-81.03,-1,Columbia
+32.08,-81.09,1,Savannah
+33.76,-84.39,-1,Atlanta
+30.44,-84.30,-1,Tallahassee
+25.79,-80.13,1,Homestead
+26.52,-81.95,1,Fort Myers
+28.03,-80.62,1,Vero Beach
+29.65,-82.32,-1,Gainesville
+30.69,-88.04,1,Mobile
+30.69,-87.02,1,Pensacola
+32.37,-86.30,-1,Montgomery
+33.52,-86.80,-1,Birmingham
+35.05,-85.31,-1,Chattanooga
+36.17,-86.78,-1,Nashville
+35.96,-83.92,-1,Knoxville
+38.25,-85.76,-1,Louisville
+37.06,-88.62,-1,Paducah
+39.49,-84.27,-1,Cincinnati
+41.08,-81.52,1,Youngstown
+40.27,-76.88,-1,Harrisburg
+40.37,-75.93,1,Allentown
+41.24,-75.88,-1,Scranton
+42.10,-75.91,-1,Binghamton
+43.16,-77.61,-1,Rochester
+44.26,-72.58,-1,Montpelier
+44.48,-73.21,-1,Burlington
+43.27,-71.55,-1,Manchester
+44.32,-69.77,1,Augusta
+43.66,-70.29,1,Portland
+44.85,-68.78,1,Bangor
+41.82,-71.42,1,Providence
+41.35,-72.10,1,New Haven
+41.77,-72.69,-1,Hartford
+42.36,-72.65,-1,Springfield
+42.24,-71.00,1,Quincy
+41.70,-69.96,1,Cape Cod
+41.29,-70.10,1,Hyannis
+42.05,-70.18,1,Scituate
+41.92,-70.67,1,Plymouth
+42.52,-70.90,1,Gloucester
+42.61,-70.62,1,Salem
+42.46,-71.01,1,Somerville
+42.37,-71.11,1,Cambridge
+42.41,-71.38,-1,Waltham
+42.30,-71.64,-1,Framingham
+42.28,-71.80,-1,Worcester
+42.10,-72.59,-1,Springfield
+42.69,-73.84,-1,Albany
+40.75,-73.99,1,Manhattan
+40.68,-73.94,1,Brooklyn
+40.73,-73.80,1,Queens
+40.58,-74.16,1,Staten Island
+40.91,-73.78,1,Bronx
+40.96,-73.84,1,Yonkers
+41.05,-73.54,1,Stamford
+41.31,-72.92,1,New London
+41.76,-72.69,-1,Hartford
+39.16,-75.53,1,Philadelphia
+39.95,-75.17,1,Philadelphia
+40.01,-75.13,1,Bensalem
+40.34,-74.66,1,Princeton
+40.22,-74.76,1,Trenton
+40.74,-74.17,1,Newark
+40.73,-74.00,1,Jersey City
+40.50,-74.46,1,Perth Amboy
+39.36,-74.42,1,Atlantic City
+38.93,-75.14,1,Wilmington
+38.98,-76.50,1,Annapolis
+39.29,-76.61,1,Baltimore
+38.29,-75.09,1,Salisbury
+38.35,-75.60,1,Cambridge
+37.54,-77.46,-1,Richmond
+36.85,-76.29,1,Norfolk
+36.92,-76.24,1,Virginia Beach
+37.27,-76.71,1,Newport News
+37.42,-77.41,-1,Petersburg
+36.73,-76.00,1,Chesapeake
+35.24,-75.53,1,Outer Banks
+35.91,-75.67,1,Manteo
+35.21,-80.84,-1,Charlotte
+35.77,-78.64,-1,Raleigh
+34.22,-77.95,1,Wilmington
+33.89,-78.89,1,Myrtle Beach
+32.78,-79.93,1,Charleston
+32.08,-81.09,1,Savannah
+31.15,-81.49,1,Brunswick
+30.33,-81.66,1,Jacksonville
+29.19,-81.00,1,Daytona Beach
+28.54,-81.38,-1,Orlando
+28.04,-80.59,1,Melbourne
+27.34,-80.39,1,Stuart
+26.71,-80.04,1,West Palm Beach
+26.12,-80.14,1,Fort Lauderdale
+25.76,-80.19,1,Miami
+25.54,-80.35,1,Homestead
+24.55,-81.78,1,Key West
+27.95,-82.46,1,Tampa
+27.77,-82.64,1,St. Petersburg
+26.52,-81.95,1,Fort Myers
+26.13,-81.79,1,Naples
+30.44,-87.22,1,Pensacola
+30.69,-88.04,1,Mobile
+33.69,-86.29,-1,Birmingham
+32.37,-86.30,-1,Montgomery
+31.31,-85.40,-1,Dothan
+34.73,-86.59,-1,Huntsville
+35.05,-85.31,-1,Chattanooga
+36.17,-86.78,-1,Nashville
+35.96,-83.92,-1,Knoxville
+36.54,-87.35,-1,Clarksville
+35.14,-90.05,-1,Memphis
+36.16,-95.99,-1,Tulsa
+35.48,-97.53,-1,Oklahoma City
+35.22,-101.83,-1,Amarillo
+32.78,-96.81,-1,Dallas
+32.78,-97.35,-1,Fort Worth
+30.27,-97.74,-1,Austin
+29.42,-98.49,-1,San Antonio
+29.76,-95.37,1,Houston
+29.30,-94.80,1,Beaumont
+30.23,-93.21,1,Lake Charles
+29.95,-90.07,1,New Orleans
+30.45,-91.19,-1,Baton Rouge
+32.52,-93.75,-1,Shreveport
+34.74,-92.29,-1,Little Rock
+35.21,-91.83,-1,Batesville
+36.34,-94.21,-1,Fayetteville
+38.63,-90.20,-1,St. Louis
+39.10,-94.58,-1,Kansas City
+37.23,-93.29,-1,Springfield
+39.04,-95.69,-1,Topeka
+37.69,-97.34,-1,Wichita
+38.84,-94.67,-1,Overland Park
+41.59,-93.62,-1,Des Moines
+42.50,-94.17,-1,Fort Dodge
+43.20,-93.62,-1,Mason City
+41.52,-90.58,-1,Davenport
+41.66,-91.53,-1,Iowa City
+42.03,-93.62,-1,Ames
+43.07,-87.91,1,Milwaukee
+44.98,-93.27,-1,Minneapolis
+44.95,-93.09,-1,St. Paul
+46.78,-92.10,-1,Duluth
+44.02,-92.47,-1,Rochester
+44.26,-88.42,1,Green Bay
+43.04,-87.91,1,Racine
+42.97,-87.90,1,Kenosha
+41.88,-87.63,-1,Chicago
+42.01,-87.67,1,Evanston
+41.76,-87.99,-1,Joliet
+42.34,-89.09,-1,Rockford
+40.48,-89.59,-1,Peoria
+39.80,-89.64,-1,Springfield
+39.96,-82.99,-1,Columbus
+41.50,-81.69,1,Cleveland
+39.13,-84.51,-1,Cincinnati
+39.76,-84.20,-1,Dayton
+40.44,-79.99,-1,Pittsburgh
+41.08,-81.52,1,Youngstown
+40.27,-76.88,-1,Harrisburg
+40.37,-75.93,1,Allentown
+39.16,-75.53,1,Philadelphia
+40.74,-74.17,1,Newark
+40.73,-74.00,1,Jersey City
+40.71,-74.01,1,New York City
+42.69,-73.84,-1,Albany
+43.16,-77.61,-1,Rochester
+43.04,-76.13,1,Syracuse
+42.88,-78.88,1,Buffalo
+44.26,-72.58,-1,Montpelier
+44.48,-73.21,-1,Burlington
+43.27,-71.55,-1,Manchester
+44.32,-69.77,1,Augusta
+43.66,-70.29,1,Portland
+44.85,-68.78,1,Bangor
+41.82,-71.42,1,Providence
+41.35,-72.10,1,New Haven
+41.77,-72.69,-1,Hartford
+42.36,-72.65,-1,Springfield
+42.24,-71.00,1,Quincy
+47.04,-122.90,1,Olympia
+47.61,-122.33,1,Seattle
+47.68,-122.13,1,Bellevue
+47.98,-122.20,1,Everett
+48.76,-122.49,1,Bellingham
+45.52,-122.68,1,Portland
+44.06,-121.31,-1,Bend
+42.33,-122.88,-1,Medford
+43.61,-116.21,-1,Boise
+43.49,-112.03,-1,Idaho Falls
+47.68,-116.78,-1,Coeur d'Alene
+46.52,-122.89,-1,Centralia
+46.97,-120.54,-1,Ellensburg
+47.24,-120.21,-1,Wenatchee
+47.10,-119.28,-1,Richland
+46.20,-119.14,-1,Walla Walla
+45.59,-122.61,1,Gresham
+44.93,-123.03,1,Salem
+44.05,-123.09,1,Eugene
+43.36,-124.22,1,Coos Bay
+42.19,-124.21,1,Crescent City
+41.76,-124.21,1,Eureka
+40.87,-124.08,1,Arcata
+39.73,-123.87,1,Mendocino
+38.34,-123.06,1,Santa Rosa
+37.77,-122.42,1,San Francisco
+37.69,-122.47,1,San Mateo
+37.41,-122.08,1,Palo Alto
+36.97,-122.03,1,Santa Cruz
+36.61,-121.90,1,Monterey
+35.37,-120.85,1,Paso Robles
+34.42,-119.70,1,Santa Barbara
+34.05,-118.24,1,Los Angeles
+33.77,-118.19,1,Long Beach
+33.62,-117.93,1,Huntington Beach
+33.61,-117.79,1,Newport Beach
+33.50,-117.67,1,Laguna Beach
+32.72,-117.16,1,San Diego
+32.58,-117.13,1,Chula Vista
+32.54,-117.03,1,National City
+39.74,-104.99,-1,Denver
+38.83,-104.82,-1,Colorado Springs
+40.59,-105.08,-1,Fort Collins
+39.52,-106.92,-1,Vail
+37.27,-107.88,-1,Durango
+39.06,-108.56,-1,Grand Junction
+40.48,-106.83,-1,Steamboat Springs
+35.08,-106.65,-1,Albuquerque
+35.69,-105.94,-1,Santa Fe
+32.34,-106.77,-1,Las Cruces
+31.76,-106.49,-1,El Paso
+34.52,-103.20,-1,Clovis
+36.73,-108.22,-1,Farmington
+33.45,-112.07,-1,Phoenix
+33.54,-112.07,-1,Glendale
+33.41,-111.93,-1,Scottsdale
+33.31,-111.84,-1,Tempe
+33.38,-111.79,-1,Mesa
+32.22,-110.93,-1,Tucson
+31.55,-110.31,-1,Sierra Vista
+34.54,-114.14,-1,Lake Havasu City
+35.20,-114.06,-1,Kingman
+36.17,-115.14,-1,Las Vegas
+36.11,-115.17,-1,Henderson
+39.16,-119.77,-1,Reno
+38.95,-119.75,-1,Carson City
+40.76,-111.89,-1,Salt Lake City
+41.22,-111.97,-1,Ogden
+40.25,-111.66,-1,Provo
+37.10,-113.58,-1,St. George
+41.14,-112.17,-1,Logan
+39.53,-110.81,-1,Price
+40.76,-109.53,-1,Vernal
+44.05,-114.74,-1,Sun Valley
+46.87,-113.99,-1,Missoula
+45.67,-111.04,-1,Bozeman
+47.50,-111.30,-1,Great Falls
+48.55,-109.68,-1,Havre
+45.78,-108.50,-1,Billings
+46.60,-112.03,-1,Helena
+41.14,-104.82,-1,Cheyenne
+42.87,-106.31,-1,Casper
+44.28,-105.51,-1,Gillette
+43.48,-110.76,-1,Jackson
+44.76,-106.96,-1,Sheridan
+42.52,-104.76,-1,Scottsbluff
+41.26,-95.94,-1,Omaha
+40.81,-96.68,-1,Lincoln
+40.92,-98.34,-1,Kearney
+41.88,-103.66,-1,Scottsbluff
+42.58,-103.17,-1,Alliance
+43.55,-96.73,-1,Sioux Falls
+44.37,-100.34,-1,Pierre
+44.08,-103.23,-1,Rapid City
+45.47,-98.49,-1,Watertown
+43.54,-96.73,-1,Sioux Falls
+46.81,-100.78,-1,Bismarck
+46.91,-96.79,-1,Fargo
+47.92,-97.03,-1,Grand Forks
+48.23,-101.30,-1,Minot
+47.91,-103.29,-1,Williston
