@@ -28,7 +28,7 @@ perceptron = Perceptron(num_features= len(train_data[0][0]))
 perceptron.fit(train_data, tauRuns=1000)
 print("Training complete")
 
-perceptron.plotConvergence(dataSpread=5)
+perceptron.plotConvergence(dataSpread=20)
 print("Convergence plot shown")
 
 
