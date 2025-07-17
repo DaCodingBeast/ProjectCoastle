@@ -1,18 +1,22 @@
-import numpy as np
 import pandas as pd
-from scipy.stats import pointbiserialr, linregress
 from matplotlib import pyplot as plt
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
 
 df = pd.read_csv('Project_Coastle/trainingMeteoData.csv')
+label_Series = df['label']
+df.drop(columns=['label'], inplace=True)
 
-labels = pd.read_csv('Project_Coastle/trainingData_LabeledLocations.csv')['coastal'].to_numpy()
-labels = labels[:len(df)]
+# ['growing_degree_days_base_0_limit_50', 'leaf_wetness_probability_mean', 'updraft_max', 'soil_moisture_0_to_100cm_mean', 'soil_moisture_0_to_7cm_mean', 'soil_moisture_28_to_100cm_mean', 'soil_moisture_7_to_28cm_mean', 'soil_temperature_0_to_100cm_mean', 'soil_temperature_0_to_7cm_mean', 'soil_temperature_28_to_100cm_mean', 'soil_temperature_7_to_28cm_mean']
+
 
 thresholdNan = 50.0
 
 total_rows = len(df)
 nan_counts = df.isna().sum()
 
+droppedFeatures = []
 
 for feature, count in nan_counts.items():
     if count > 0:
@@ -23,39 +27,61 @@ for feature, count in nan_counts.items():
         if percent > thresholdNan:
             print(f"Dropping {feature} due to NaN percentage: {percent:.2f}%")
             df.drop(columns=[feature], inplace=True)
+            droppedFeatures.append(feature)
         elif df[feature].nunique() <= 1:
             print(f"Dropping {feature} due to constant value")
             df.drop(columns=[feature], inplace=True)
+            droppedFeatures.append(feature)
+
+
+
+def findbestPolynomialDegree(x, y, max_degree=10):
+    best_degree = 1
+    best_r2 = float('-inf')
+
+    for degree in range(1, max_degree + 1):
+        poly_features = PolynomialFeatures(degree=degree, include_bias=False)
+        X_poly = poly_features.fit_transform(x.reshape(-1, 1))
+        model = LinearRegression()
+        model.fit(X_poly, y)
+        y_pred = model.predict(X_poly)
+        r2 = r2_score(y, y_pred)
+
+        if r2 > best_r2:
+            best_r2 = r2
+            best_degree = degree
+
+    return best_degree, best_r2
+
 
 
 biserialCorrelations = []    
-linearRegressCorrelations = []    
+polyRegressCorrelations = []    
 
 for feature in df.columns:
-    # Calculate correlations with this feature
-    if not df[feature].isna().any():
-        bisereialCorr, p = pointbiserialr(df[feature], labels)
-        biserialCorrelations.append((bisereialCorr,feature))
-        print(f"Point Biserial Correlation between {feature} and label: {bisereialCorr:.2f}")
-    else:
-        biserialCorrelations.append((0.0, feature))
 
-    linregress_result = linregress(df[feature], labels)
-    linearRegressCorrelations.append((linregress_result.rvalue, feature))
-    print(f"Linear Regression between {feature} and label: r-value={linregress_result.rvalue:.2f}")
+    df[feature].fillna(df[feature].mean(), inplace=True)
+
+    # Polynomial Regression correlation
+    best_degree, best_r2 = findbestPolynomialDegree(df[feature].values, label_Series.values)
+
+    polyRegressCorrelations.append((best_r2, feature))
+    # print(f"Polynomial Regression between {feature} and label: r-squared={best_r2:.2f}")
+
+
+    if abs(best_r2) < 0.25 :
+        droppedFeatures.append(feature)
 
 
 #plot a bar chart of correlations side by side (Linear Regression bar -> blue, Point Biserial bar -> orange)
 plt.figure(figsize=(15, 8))
-biserial_corrs = [x[0] for x in biserialCorrelations]
-linear_regress_corrs = [x[0] for x in linearRegressCorrelations]
-features = [x[1] for x in linearRegressCorrelations]
+poly_regress_corrs = [x[0] for x in polyRegressCorrelations]
+features = [x[1] for x in polyRegressCorrelations]
 
 bar_width = 0.5
 x = range(len(features))
 
-plt.bar(x, biserial_corrs, width=bar_width, label='Point Biserial', color='orange')
-plt.bar([i + bar_width for i in x], linear_regress_corrs, width=bar_width, label='Linear Regression', color='blue')
+plt.bar([i + bar_width for i in x], poly_regress_corrs, width=bar_width, label='Polynomial Regression', color='blue')
 
 plt.xlabel('Features')
 plt.ylabel('Correlation Coefficient')
@@ -64,6 +90,8 @@ plt.xticks([i + bar_width / 2 for i in x], features, rotation=45)
 plt.legend()
 plt.tight_layout()
 plt.show()
+
+print(droppedFeatures)
 
 
 # def filter_features_by_nan_and_corr(df, corr_series, nan_threshold=0.5, corr_threshold=0.08):
