@@ -59,6 +59,7 @@ class requester():
             daily_data.append(requester.mean(values))
 
         self.addToCSV(daily_data, label)
+        print(daily_data)
 
         time.sleep(5.0)  # Sleep to avoid hitting rate limits
         self.count +=1
@@ -103,7 +104,6 @@ latitudes = [x[0] for x in new_city_data]
 longitudes = [x[1] for x in new_city_data]
 labels = [x[2] for x in new_city_data]
 names = [x[3] for x in new_city_data]
-
 
 
 print("getting weather data from API")
