@@ -1,15 +1,37 @@
-from flask import Flask, render_template, request, jsonify
-from coastle_model import run_coastle_model  # this is the actual model
-import random
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Github Pages
 
-@app.route('/')
-def index():
-    # ADD API STUFF HERE SOMEHOW
-    city_data = {
-        #ADD DATA
-    city_coords = [32, -32]  # give sum example stuff here
+location = "Unknown"
 
-    return render_template('index.html', city_data=city_data, city_coords=city_coords)
+# API route
+@app.route('/api/meteo/', methods=['GET'])
+def getMeteoAPI_info():
 
+    # get location from gemini
+    global location
+    location = "Gemini Location"
+
+    #meteo api get info 
+       
+
+    return jsonify({'result': apiInfo, 'perceptron': 'perceptron_output'})
+
+
+@app.route('/api/location/', methods=['GET'])
+def getLocation():
+    return jsonify({'location': location})
+
+
+@app.route('/api/perceptronGuess/', methods=['GET'])
+def getPerceptronPrediction():
+
+    perceptronGuess = "Perceptron Prediction"
+
+    return jsonify({'perceptronPrediction': perceptronGuess})
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
