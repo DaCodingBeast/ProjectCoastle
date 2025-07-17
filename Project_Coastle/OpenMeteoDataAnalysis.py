@@ -17,6 +17,7 @@ total_rows = len(df)
 nan_counts = df.isna().sum()
 
 droppedFeatures = []
+linearRegression = []
 
 for feature, count in nan_counts.items():
     if count > 0:
@@ -51,6 +52,9 @@ def findbestPolynomialDegree(x, y, max_degree=10):
             best_r2 = r2
             best_degree = degree
 
+        if degree == 1:
+            linearRegression.append(r2)
+            print(f"Linear Regression between feature and label: r-squared={r2:.2f}")
     return best_degree, best_r2
 
 
@@ -80,13 +84,14 @@ features = [x[1] for x in polyRegressCorrelations]
 
 bar_width = 0.5
 x = range(len(features))
+print(linearRegression)
 
-plt.bar([i + bar_width for i in x], poly_regress_corrs, width=bar_width, label='Polynomial Regression', color='blue')
+plt.bar([i for i in x], poly_regress_corrs, width=bar_width, label='Polynomial Regression', color='blue')
+plt.bar([i for i in x], linearRegression, width=bar_width, label='Linear Regression', color='red')
 
 plt.xlabel('Features')
 plt.ylabel('Correlation Coefficient')
 plt.title('Feature Correlations with Label')
-plt.xticks([i + bar_width / 2 for i in x], features, rotation=45)
 plt.legend()
 plt.tight_layout()
 plt.show()
