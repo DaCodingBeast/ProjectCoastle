@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>How It Works - COASTLE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #e6f0ff;
+      color: #003366;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #004aad;
+      color: white;
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0, 0, 50, 0.15);
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      background-color: #1a66ff;
+      padding: 0.6rem 1.2rem;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #003db3;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 3rem;
+      padding: 3rem;
+      justify-items: center;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 600px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 50, 0.15);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .text-box {
+      background-color: #cce0ff;
+      padding: 1rem;
+      height: 180px;
+      overflow-y: auto;
+      font-size: 1rem;
+    }
+
+    .text-box::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .text-box::-webkit-scrollbar-thumb {
+      background-color: #6699ff;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 1rem;
+      }
+      .card img {
+        height: 250px;
+      }
+      .text-box {
+        height: 160px;
+      }
+    }
+
+    .card-title {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #004aad;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.image-box {
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #f5faff;
+  border-bottom: 1px solid #ccc;
+}
+
+.image-box img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>COASTLE</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="howItWorks.html">How It Works</a>
+    </nav>
+  </header>
+
+  <main>
+  <div class="card">
+    <h2 class="card-title">The Perceptron</h2>
+    <div class="image-box">
+      <img src="perceptronGraph.jpg" alt="Step 1">
+    </div>
+    <div class="text-box">The Perceptron is a type of machine learning algorithm that falls under the category of a linear classifier. It takes data, which can be multi-dimensional, and finds correlations during training to classify the data into two binary categories, labeling them as either -1 or 1. The algorithm takes a set of numerical inputs, multiplies each by weight, called theta not, and adds them together along with a bias term to produce a binary output. Our program uses this algorithm to classify whether a city is coastal (1) or inland (-1), and is trained on hundreds of cities to find a correlation.</div>
+  </div>
+
+  <div class="card">
+    <h2 class="card-title">Perceptron Convergence</h2>
+    <div class="image-box">
+      <img src="convergence.jpg" alt="Step 2">
+    </div>
+    <div class="text-box">Insert text here.</div>
+  </div>
+
+  <div class="card">
+    <h2 class="card-title">Feature Correlations per Data Type</h2>
+    <div class="image-box">
+      <img src="Correlations.jpg" alt="Step 3">
+    </div>
+    <div class="text-box">This graph shows the level of correlation that the perceptron could find during training based on the type of data given. The 42 different dimensions of data are acquired from OpenMeteo API, and the perceptron model is trained on this data. The higher bars represent data that is more significant to finding a correlation between the weather data and the location of the city.</div>
+  </div>
+
+  <div class="card">
+    <h2 class="card-title">Feature Correlations Given Number of Features</h2>
+    <div class="image-box">
+      <img src="Correlations2.jpg" alt="Step 4">
+    </div>
+    <div class="text-box">Insert text here for step 4.</div>
+  </div>
+</main>
+</body>
+</html>
