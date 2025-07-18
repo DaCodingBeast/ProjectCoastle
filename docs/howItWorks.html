@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>How It Works - COASTLE</title>
@@ -53,82 +54,154 @@
     }
 
     main {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-      gap: 3rem;
-      padding: 3rem;
-      justify-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      padding: 2.5rem 0;
+      align-items: center;
+      width: 100vw;
+      max-width: 100vw;
+      overflow-x: hidden;
     }
 
     .card {
-      width: 100%;
-      max-width: 600px;
-      background-color: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 50, 0.15);
+      width: 100vw;
+      max-width: 100vw;
+      min-width: 100vw;
+      background: linear-gradient(135deg, #e6f0ff 0%, #cce0ff 100%);
+      border-radius: 32px;
+      box-shadow: 0 8px 32px rgba(0, 0, 50, 0.13);
+      border: 3px solid #b3d1ff;
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      align-items: stretch;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(60px) scaleY(0.95);
+      transition: opacity 0.8s cubic-bezier(.77, 0, .18, 1), transform 0.8s cubic-bezier(.77, 0, .18, 1);
     }
 
-    .card img {
-      width: 100%;
-      height: 350px;
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+    }
+
+    .card img,
+    .image-box {
+      width: 100vw;
+      max-width: 100vw;
+      min-width: 100vw;
+      height: 48vh;
       object-fit: cover;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 2px solid #b3d1ff;
+      margin: 0;
+      padding: 0;
+      background-color: #f5faff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Fix for image-row so all images show side by side */
+    .image-row {
+      display: flex;
+      gap: 2vw;
+      justify-content: center;
+      align-items: flex-end;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .image-row > div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 0;
+    }
+    .image-row img {
+      width: 100%;
+      max-width: 600px;
+      height: 32vh;
+      object-fit: contain;
+      margin: 0;
+      padding: 0;
+      display: block;
+      background: transparent;
+      border: none;
+    }
+    .image-row .caption {
+      font-size: 0.95rem;
+      color: #004aad;
+      margin-top: 0.4rem;
+      text-align: center;
+    }
+
+    .image-box img {
+      max-height: 100%;
+      max-width: 100vw;
+      object-fit: contain;
     }
 
     .text-box {
-      background-color: #cce0ff;
-      padding: 1rem;
-      height: 180px;
+      background-color: #f5faff;
+      padding: 1.5rem 4vw;
+      height: auto;
+      font-size: 1.25rem;
+      line-height: 1.5;
       overflow-y: auto;
-      font-size: 1rem;
+      color: #003366;
+      border-top: 2px solid #b3d1ff;
     }
 
-    .text-box::-webkit-scrollbar {
-      width: 6px;
+    .card-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #004aad;
+      margin: 1.5rem 0 1rem 0;
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
 
-    .text-box::-webkit-scrollbar-thumb {
-      background-color: #6699ff;
-      border-radius: 5px;
-    }
-
-    @media (max-width: 600px) {
-      main {
-        padding: 1rem;
+    @media (max-width: 900px) {
+      .card-title {
+        font-size: 1.3rem;
       }
-      .card img {
-        height: 250px;
-      }
+
       .text-box {
-        height: 160px;
+        font-size: 1rem;
+        padding: 1rem 2vw;
+      }
+
+      .card img,
+      .image-box {
+        height: 220px;
       }
     }
 
     .card-title {
-  text-align: center;
-  font-size: 1.4rem;
-  color: #004aad;
-  margin: 1rem 0 0.5rem 0;
-}
+      text-align: center;
+      font-size: 1.4rem;
+      color: #004aad;
+      margin: 1rem 0 0.5rem 0;
+    }
 
-.image-box {
-  height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: #f5faff;
-  border-bottom: 1px solid #ccc;
-}
+    .image-box {
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-color: #f5faff;
+      border-bottom: 1px solid #ccc;
+    }
 
-.image-box img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-}
+    .image-box img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
   </style>
 </head>
 
@@ -143,38 +216,84 @@
   </header>
 
   <main>
-  <div class="card">
-    <h2 class="card-title">The Perceptron</h2>
-    <div class="image-box">
-      <img src="perceptronGraph.jpg" alt="Step 1">
+    <div class="card">
+      <h2 class="card-title">The Perceptron</h2>
+      <div class="image-box">
+        <img src="perceptronGraph.jpg" alt="Step 1">
+      </div>
+      <div class="text-box">The Perceptron is a machine learning algorithm that belongs to the category of linear
+        classifiers. It processes data, which can be multi-dimensional, and identifies patterns during training to
+        categorize the data into two binary classes, labeled as either -1 or 1. The algorithm takes a set of numerical
+        inputs, multiplies each by a weight called theta, and sums them along with a bias term to produce a binary
+        output. Our program uses this algorithm to determine whether a city is coastal (1) or inland (-1), and it is
+        trained on hundreds of cities to find a correlation.</div>
     </div>
-    <div class="text-box">The Perceptron is a type of machine learning algorithm that falls under the category of a linear classifier. It takes data, which can be multi-dimensional, and finds correlations during training to classify the data into two binary categories, labeling them as either -1 or 1. The algorithm takes a set of numerical inputs, multiplies each by weight, called theta not, and adds them together along with a bias term to produce a binary output. Our program uses this algorithm to classify whether a city is coastal (1) or inland (-1), and is trained on hundreds of cities to find a correlation.</div>
-  </div>
 
-  <div class="card">
-    <h2 class="card-title">Perceptron Convergence with Normalization</h2>
-    <div class="image-box">
 
-      <img src="ConvergenceWithNormalization.jpg" alt="Step 2">
+    <div class="card">
+      <h2 class="card-title">Linear Regression Correlation</h2>
+      <div class="image-box">
+        <img src="Correlations.jpg" alt="Step 3">
+      </div>
+      <div class="text-box">How does the perceptron classify the city? It uses the OpenMeteo API (<a
+          href="https://open-meteo.com" target="_blank">Open-Meteo</a>, licensed under <a
+          href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>). We extract weather
+        features for the city and feed them into the perceptron model, which is trained on 300+ cities with all 42
+        features each. This graph shows estimated correlations between the OpenMeteo features and the label[(coastal (1)
+        or inland (-1)]. These “correlations” are the R^2 scores of linear regressions fitted to all data points.
+      </div>
     </div>
-    <div class="text-box">This graph tracks the iterations of the perceptron model as from the point where it starts as it constantly improves its result. As the perceptron changes its weights, epoch by epoch, the graph's percent error decreases and the line falls as the model gets more accurate.  Each epoch is every change that the perceptron makes by adjusting its normal (thera 0). The accuracy of the perceptron to linearly separate the data points increases as it is trained on more data as it optimizes the linear separation. </div>
-  </div>
 
-  <div class="card">
-    <h2 class="card-title">Feature Correlations per Data Type</h2>
-    <div class="image-box">
-      <img src="Correlations.jpg" alt="Step 3">
+    <div class="card">
+      <h2 class="card-title">Polynomial Feature Correlations</h2>
+      <div class="image-box">
+        <img src="Correlations2.jpg" alt="Step 4">
+      </div>
+      <div class="text-box">The above graph is an example of “polynomial feature expansion.” Instead of providing the
+        perceptron with just a feature [x], we give it exponentiated features [x, x^2, x^3, x^n] that effectively
+        allow it to fit a polynomial. As shown in the graph, the r^2 scores for the polynomial regressions are
+        significantly higher than those for the linear regressions, demonstrating that using this feature expansion
+        makes the model more accurate.</div>
     </div>
-    <div class="text-box">This graph shows the level of correlation that the perceptron could find during training based on the type of data given. The 42 different dimensions of data are acquired from OpenMeteo API, and the perceptron model is trained on this data. The higher bars represent data that is more significant to finding a correlation between the weather data and the location of the city.</div>
-  </div>
 
-  <div class="card">
-    <h2 class="card-title">Feature Correlations Given Number of Features</h2>
-    <div class="image-box">
-      <img src="Correlations2.jpg" alt="Step 4">
+    <div class="card">
+      <h2 class="card-title">Perceptron Convergence</h2>
+      <div class="image-row" style="display: flex; gap: 2vw; justify-content: center; align-items: flex-end; width: 100%;">
+        <div>
+          <img src="worst.png" alt="Worst Case">
+          <div class="caption">Non-Normalized</div>
+        </div>
+        <div>
+          <img src="ConvergenceWithNormalization.jpg" alt="Normalized Convergence">
+          <div class="caption">Normalized and Polynomial Regression</div>
+        </div>
+        <div>
+          <img src="testAndTrainImage.png" alt="Train vs Test">
+          <div class="caption">Train vs Test Convergence</div>
+        </div>
+      </div>
+      <div class="text-box" style="margin-top: 1.5rem;">This graph tracks the performance of the training model as it iterates over Tau runs
+        (commonly referred to as epochs). As the perceptron changes its weights, epoch by epoch, the model’s error (% of
+        incorrectly predicted labels) decreases. You can see that the model struggles to improve after reaching a
+        certain loss (in this case, a loss of 11.53%). </div>
     </div>
-    <div class="text-box">The above graph illustrates a change that we made in the perceptron model to increase the accuracy of the model. By adjusting the linear classifier from just a line to become a higher degree polynomial, the data, which was not linearly separable, could be divided in a more accurate way. This means that the correlation of the data to the location of the city was increased, making the model more precise.</div>
-  </div>
-</main>
+
+  </main>
+  <script>
+    // Rollout animation for cards on scroll
+    function revealCardsOnScroll() {
+      const cards = document.querySelectorAll('.card');
+      const windowHeight = window.innerHeight;
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if (cardTop < windowHeight - 100) {
+          card.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealCardsOnScroll);
+    window.addEventListener('DOMContentLoaded', revealCardsOnScroll);
+  </script>
 </body>
+
 </html>
