@@ -6,6 +6,47 @@
   <title>COASTLE</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    #startGameBtn {
+      background-color: #1a66ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 1.2rem 3rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 50, 0.15);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #startGameBtn:hover {
+      background-color: #003db3;
+    }
+
+    #tryAgainBtn {
+      background-color: #1a66ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.7rem 1.4rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 50, 0.10);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: none;
+    }
+
+    #tryAgainBtn:hover {
+      background-color: #003db3;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -16,67 +57,135 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      letter-spacing: 0.01em;
     }
 
     header {
-      background-color: #004aad;
+      background: linear-gradient(90deg, #004aad 60%, #1a66ff 100%);
       color: white;
-      padding: 1.2rem 2rem;
+      padding: 1.5rem 2.5rem 1.2rem 2.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 2px 6px rgba(0, 0, 50, 0.15);
+      box-shadow: 0 2px 16px rgba(0, 0, 50, 0.13);
+      border-radius: 0 0 24px 24px;
     }
 
     header h1 {
       margin: 0;
-      font-weight: 600;
-      font-size: 1.8rem;
+      font-weight: 700;
+      font-size: 2.2rem;
+      letter-spacing: 0.04em;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
 
     nav {
       display: flex;
-      gap: 1rem;
+      gap: 1.2rem;
     }
 
     nav a {
-      background-color: #1a66ff;
-      padding: 0.6rem 1.2rem;
+      background: linear-gradient(90deg, #1a66ff 60%, #004aad 100%);
+      padding: 0.7rem 1.4rem;
       color: white;
       font-weight: 600;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 8px;
       text-decoration: none;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
+      font-size: 1.08rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 50, 0.08);
+      transition: background 0.3s, box-shadow 0.3s;
+      border: none;
     }
 
     nav a:hover {
-      background-color: #003db3;
+      background: #003db3;
+      box-shadow: 0 4px 16px rgba(0, 0, 50, 0.13);
+    }
+
+    .button-bar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2.2rem;
+      margin-bottom: 0.5rem;
+      gap: 0.5rem;
+    }
+
+    #startGameBtn,
+    #tryAgainBtn {
+      background: linear-gradient(90deg, #1a66ff 60%, #004aad 100%);
+      color: white;
+      border: none;
+      border-radius: 16px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 1rem 2.2rem;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 50, 0.13);
+      cursor: pointer;
+      transition: background 0.3s, box-shadow 0.3s;
+      display: inline-block;
+      letter-spacing: 0.02em;
+    }
+
+    #startGameBtn {
+      background: linear-gradient(90deg, #fdbb38 40%, #ff9721 70%);
+      color: #003366;
+    }
+
+    #tryAgainBtn {
+      background: linear-gradient(90deg, #fdbb38 40%, #ff9721 70%);
+      color: #003366;
+      display: none;
+    }
+
+    #startGameBtn:hover,
+    #tryAgainBtn:hover {
+      background: #003db3;
+      color: white;
+      box-shadow: 0 6px 24px rgba(0, 0, 50, 0.18);
+    }
+
+    .hidden {
+      display: none !important;
     }
 
     main {
       display: flex;
       flex: 1;
-      padding: 2rem;
-      gap: 2rem;
+      padding: 1.2rem 2rem 2rem 2rem;
+      gap: 2.2rem;
       flex-wrap: wrap;
       justify-content: center;
+      align-items: flex-start;
+      margin-top: 0.5rem;
     }
 
     section {
       flex: 1 1 400px;
-      background: white;
-      border-radius: 10px;
-      padding: 1.8rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 50, 0.1);
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 32px;
+      padding: 2.2rem 2rem 2rem 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 50, 0.13);
       max-width: 600px;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      border: 1.5px solid #e6f0ff;
+      position: relative;
+      overflow: hidden;
     }
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 2.1rem;
       color: #004aad;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-align: center;
     }
 
     ul {
@@ -93,22 +202,26 @@
       flex-wrap: wrap;
       gap: 0.75rem;
       margin-bottom: 1rem;
+      justify-content: center;
     }
 
     button.action-btn {
-      background-color: #1a66ff;
+      background: linear-gradient(90deg, #1a66ff 60%, #004aad 100%);
       color: white;
       border: none;
       padding: 0.7rem 1.2rem;
-      border-radius: 5px;
-      font-size: 1rem;
+      border-radius: 8px;
+      font-size: 1.08rem;
       font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 8px rgba(0, 0, 50, 0.08);
+      letter-spacing: 0.01em;
     }
 
     button.action-btn:hover {
-      background-color: #003db3;
+      background: #003db3;
+      box-shadow: 0 4px 16px rgba(0, 0, 50, 0.13);
     }
 
     #modelResult {
@@ -116,15 +229,27 @@
       margin-top: 1rem;
       font-size: 1.2rem;
       color: #004aad;
+      text-align: center;
     }
 
     #map iframe {
       width: 100%;
       height: 300px;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
       margin-top: 1rem;
       box-shadow: 0 2px 10px rgba(0, 0, 50, 0.1);
+    }
+
+    .rollout {
+      opacity: 0;
+      transform: translateY(40px) scaleY(0.8);
+      transition: opacity 0.6s cubic-bezier(.77, 0, .18, 1), transform 0.6s cubic-bezier(.77, 0, .18, 1);
+    }
+
+    .rollout.visible {
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
     }
 
     @media (max-width: 768px) {
@@ -135,12 +260,15 @@
       section {
         padding: 1.2rem;
       }
+
+      h2 {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
 
 <body>
-
   <header>
     <h1>COASTLE</h1>
     <nav>
@@ -148,27 +276,62 @@
       <a href="howItWorks.html">How It Works</a>
     </nav>
   </header>
-
-  <main>
+  <div class="button-bar">
+    <button id="startGameBtn">Start Game</button>
+    <button id="tryAgainBtn"">Play Again</button>
+  </div>
+  <main id="gameMain">
     <section id="left">
-      <h2>City Features</h2>
-      <ul id="cityDataList"></ul>
+      <h2 class="rollout">City Features</h2>
+      <ul id="cityDataList" class="rollout"></ul>
     </section>
-
     <section id="right">
-      <h2>Your Guess</h2>
-      <div class="button-group">
-        <button class="action-btn" onclick="setGuessAndRun('Coastal')">Coastal</button>
-        <button class="action-btn" onclick="setGuessAndRun('Not Coastal')">Not Coastal</button>
-        <button class="action-btn" onclick="openMap()">See on Map</button>
+      <h2 class="rollout">Your Guess</h2>
+      <div class="button-group rollout">
+        <button class="action-btn rollout" onclick="getPerceptronPrediction()">Coastal</button>
+        <button class="action-btn rollout" onclick="getPerceptronPrediction()">Not Coastal</button>
+        <button class="action-btn rollout" onclick="getLocation()">See on Map</button>
       </div>
-      <p>Your guess: <span id="guess-display">None</span></p>
-      <p id="modelResult"></p>
-      <div id="map"></div>
+      <p id="modelResult" class="rollout"></p>
+      <div id="map" class="rollout"></div>
     </section>
   </main>
 
-  <script src = "GameFunctions.js"></script>
+  <script src="GameFunctions.js"></script>
+  <script>
+    const startBtn = document.getElementById('startGameBtn');
+    const tryAgainBtn = document.getElementById('tryAgainBtn');
+    const gameMain = document.getElementById('gameMain');
+    const rolloutEls = document.querySelectorAll('.rollout');
+
+    function hideRollout() {
+      rolloutEls.forEach(el => el.classList.remove('visible'));
+    }
+
+    function showRollout() {
+      rolloutEls.forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), 100 + i * 80);
+      });
+    }
+
+    hideRollout();
+
+    startBtn.onclick = function() {
+      startBtn.style.display = 'none';
+      tryAgainBtn.style.display = 'inline-block';
+      hideRollout();
+      setTimeout(showRollout, 100);
+      startGame();
+    };
+
+    tryAgainBtn.onclick = function() {
+      startBtn.style.display = 'inline-block';
+      tryAgainBtn.style.display = 'none';
+      hideRollout();
+      setTimeout(showRollout, 100);
+      startGame();
+    };
+  </script>
 </body>
 
 </html>
