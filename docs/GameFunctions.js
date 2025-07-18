@@ -18,6 +18,8 @@ async function startGame() {
     const list = document.getElementById('cityDataList');
     // Remove all previous list items
     list.innerHTML = '';
+    document.getElementById('map').innerHTML = ``;
+    document.getElementById('modelResult').innerText = "";
 
     const data = await request('meteo');
     console.log('API response:', data);
